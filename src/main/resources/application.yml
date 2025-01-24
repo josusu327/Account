@@ -1,4 +1,8 @@
 spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
   datasource:
     url: jdbc:h2:mem:test
     username: sa
@@ -17,7 +21,3 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
-  data:
-    redis:
-      host: localhost
-      port: 6379
