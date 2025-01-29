@@ -1,5 +1,6 @@
 package com.example.account.dto;
 
+import com.example.account.aop.AccountLockIdInterface;
 import com.example.account.type.TransactionResultType;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -12,13 +13,13 @@ public class CancelBalance {
      * "transactionId":"c2033bb6d82a4250aecf8e27c49b63f6",
      * "accountNumber":"1000000000",
      * "amount":1000
-     *  }
+     * }
      */
 
     @Getter
     @Setter
     @AllArgsConstructor
-    public static class Request {
+    public static class Request implements AccountLockIdInterface {
         @NotBlank
         private String transactionId;
 
@@ -39,7 +40,7 @@ public class CancelBalance {
      * "transactionId":"c2033bb6d82a4250aecf8e27c49b63f6",
      * "amount":1000,
      * "transactedAt":"2022-06-01T23:26:14.671859"
-     *  }
+     * }
      */
 
     @Getter
